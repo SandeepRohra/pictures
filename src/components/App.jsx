@@ -1,8 +1,22 @@
+import axios from 'axios' //axios install karte h npm i --save axios s apan
 import React from 'react'
 import Input from './SearchBar'
 class App extends React.Component {
+  state = {}
   onSearchSubmit = (term) => {
-    console.log(term)
+    //yaha p apan axios use kiye y uska sntax h y
+    axios //.get m apan vo link dale jaha s apan vo data search karte h
+      .get('https://api.unsplash.com/search/photos', {
+        params: { query: term }, //yaha p parameter yaha p quarry jo h vo is form m jo likhe h vo h
+        headers: {
+          //fir headers m apan apni authoraization key dale h jisme client id vaha login karke mili
+          Authorization: `Client-ID PbaeH0pSj_5nwFWICa7UqhlsXlNSqFR5o_qVlOcZRCQ `,
+        },
+      })
+      .then((response) => {
+        //fir .then s apan vo api s jo response aya usko console.log kiye
+        console.log(response.data.results)
+      })
   }
   render() {
     return (
