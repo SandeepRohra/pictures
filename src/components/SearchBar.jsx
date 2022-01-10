@@ -6,8 +6,10 @@ class Input extends React.Component {
 
   // y apan form k defaut behaviour kostop karne k liye use kiye h
   //verna vo form submitkardeta h normally
-  onSubmit(event) {
+  onSubmit = (event) => {
     event.preventDefault()
+    //Yaha p kyuki vo input ka prop h to usko apan yaha exesses kiye or usko apan this.state.term k sath imliment kar diye
+    this.props.onSubmit(this.state.term)
   }
   render() {
     return (
