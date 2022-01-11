@@ -1,7 +1,7 @@
 import React from 'react'
 class ImageCard extends React.Component {
   constructor(props) {
-    //to create a ref we create a variable inside the cunstrouctor and in cassesthis. is used befor variable name
+    //to create a ref we create a variable inside the cunstrouctor and in classes this. is used befor variable name
     super(props)
     this.state = { spans: 0 } //Step 1) apan ek state init kiye and uski span property ko 0 kardiye
     this.imageRef = React.createRef()
@@ -14,9 +14,9 @@ class ImageCard extends React.Component {
     //step 3- apan us event listner m jab component mount hga to ek function triger karvaye
     //step 4 -fir jab vo mount hone k baad vali client height milegi
     const height = this.imageRef.current.clientHeight //step5- usko  apan ek const height banaye jisme apan usko store kiye
-    const spans = Math.ceil(height / 10) //step 6- usko apan MAth.ceil s height/150 kiye taki kitte sans chiye pata chale
+    const spans = Math.ceil(height / 10) //step 6- usko apan MAth.ceil s height/150 kiye taki kitte spans chiye pata chale
     this.setState({ spans: spans })
-  } //step 7 - fir utte spans ko apan set staekarke state m pass kar diye
+  } //step 7 - fir utte spans ko apan set state karke state m pass kar diye
   render() {
     const { description, urls } = this.props.image
     return (
